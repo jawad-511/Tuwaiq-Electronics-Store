@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tuwaiq Electronics - FAQ</title>
+    <link rel="icon" href="images/Favicon/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tuwaiq Electronics
+        </h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a target="_blank" href="faq.html">FAQ</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <h2>FAQ</h2>
+
+    <div class="container faq-section">
+        <div class="faq">
+            <div class="question">What is the return policy?</div>
+            <div class="answer">
+                <p>You can return any item within 30 days of purchase, provided it is in original condition and packaging.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">How do I track my order?</div>
+            <div class="answer">
+                <ol>
+                    <li>Go to the order tracking page.</li>
+                    <li>Enter your order ID and email address.</li>
+                    <li>Click on the 'Track' button.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="faq">
+            <div class="question">What payment methods are accepted?</div>
+            <div class="answer">
+                <ul>
+                    <li>Credit/Debit Cards</li>
+                    <li>PayPal</li>
+                    <li>Apple Pay</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Tuwaiq Electronics</p>
+        
+        <a href="https://twitter.com" target="_blank"><img  width="20px" src="images/Social Media/x.png"></a> 
+        
+        <a href="https://instagram.com" target="_blank"><img width="20px" src="images/Social Media/Instagram.png"></a>
+    </footer>
+    <script>
+        document.querySelectorAll('.question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

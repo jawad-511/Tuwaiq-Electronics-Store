@@ -1,0 +1,260 @@
+html {
+height: 100%;
+}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1f1f2c;
+    min-height: 100%; 
+    display: flex;
+    flex-direction: column; 
+}
+header  {
+    background-color: #0e0e21;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    background-color: #0e0e21;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+
+}
+
+
+header nav a, footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+     
+
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #fff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+
+
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.product {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    width: 30%;
+}
+.product:hover{
+    background-color: gray;
+    box-shadow: 0 0 5px;
+    transition: 0.3s;
+
+}
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+.product-name {
+font-size: 25px;
+margin: 10px ;
+}
+a.namest{
+    color:white;
+    text-decoration: none;
+}
+a.namest:hover {
+    color:lightblue;
+    font-size: x-large;
+    transition: 0.2s;
+}
+.product-price {
+    color: white;
+    font-size: 1.2em;
+}
+h2 {
+    color: white;
+    text-align: center;
+}
+
+.faq-section {
+    
+    padding: 20px;
+    color: #fff;
+    animation:transitionIn 1s;
+    margin-top: 150px;
+    width: 700px;
+    
+    
+   
+}
+.question {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #0e0e21;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    
+    
+    
+    
+}
+.answer {
+    display: none;
+    padding: 10px;
+    background-color: #0e0e21;
+    border: 1px solid #ccc;
+    animation:transitionOut 0.5s;
+    
+    
+    
+    
+}
+table, td, th {
+    border: 1px none;
+  }
+  caption{
+    padding: 5px;
+    border: none;
+    background-color: #0e0e21;
+  }
+  caption:hover {
+    background-color: #1f1f2c;
+    text-align: center;
+    
+  }
+  
+  table {
+    background-color: #0e0e21;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    border-collapse: collapse;
+    margin-top: 50px;
+  }
+  tr:hover {background-color: #1f1f2c;}
+  td {
+    text-align: center;
+  }
+  tr{
+    text-align: center;
+  }
+  .data-display {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0e0e21;
+    border-radius: 5px;
+}
+
+  
+.data-display p {
+    margin-bottom: 10px;
+    width: 700px;
+}
+
+
+@media (max-width: 768px) {
+    .product {
+        width: 100%;
+    }
+}
+/* Slider container */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Slides */
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Hide the images by default */
+.slides img {
+    width: 100%;
+    display: none;
+}
+
+/* Show the first image */
+.slides img:first-child {
+    display: block;
+}
+
+/* Navigation buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Product videos */
+.product-videos {
+    margin-top: 20px;
+    text-align: center;
+}
+@keyframes transitionIn {
+    from{
+        margin-top: 0px;
+    }
+    to {
+        margin-top: 150px;
+    }
+    
+
+}
+@keyframes transitionOut {
+    from{
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+}
+@keyframes transitionOut1 {
+    from{
+        opacity: 1;
+        transform: rotateX(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(-10deg);
+    }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tuwaiq Electronics - Contact</title>
+    <link rel="icon" href="images/Favicon/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+form {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0e0e21;
+    border-radius: 5px;
+    width: 700px;
+   
+}
+form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+    
+}
+form input, form select, form textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    
+}
+form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+   
+}
+form input[type="submit"]:hover {
+    background-color: #45a049;
+   
+}
+
+</style>
+<body>
+    <header>
+        <h1>Tuwaiq Electronics
+        </h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a target="_blank" href="faq.html">FAQ</a>
+            <a href="about.html">About</a>
+        </nav>
+        
+    </header>
+    <div class="container">
+        <h2>Contact</h2>
+        <form id="orderForm" action="display.html" method="GET" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="example@example.com">
+            
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile" name="mobile" required placeholder="+966555555555">
+            
+            <label for="product">Select Product:</label>
+            <select id="product" name="product" required>
+                <option value="" disabled selected hidden>Select Product</option>
+                <option value="Beamz Linked Box">Beamz Linked Box</option>
+                <option value="LG C1">LG C1</option>
+                <option value="Playstation 5">Playstation 5</option>
+            </select>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+            
+            <input type="submit" value="Submit Order">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Tuwaiq Electronics</p>
+            
+            <a href="https://twitter.com" target="_blank"><img  width="20px" src="images/Social Media/x.png"></a> 
+            
+            <a href="https://instagram.com" target="_blank"><img width="20px" src="images/Social Media/Instagram.png"></a>
+        
+    </footer>
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            const mobilePattern = /^\+966\d{8,12}$/;
+
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (!mobilePattern.test(mobile)) {
+                alert('Please enter a valid mobile number starting with +966.');
+                return false;
+            }
+            if (mobile.length > 13) {
+        alert('Please enter a valid Mobile number, should not exceed 10 characters.');
+        return false;
+    }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

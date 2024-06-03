@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tuwaiq Electronics - Display</title>
+    <link rel="icon" href="images/Favicon/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tuwaiq Electronics
+        </h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a target="_blank" href="faq.html">FAQ</a>
+            <a href="about.html">About</a>
+        </nav>
+        
+    </header>
+    <div class="container">
+        <h2>Order Details</h2>
+        <div class="data-display">
+            <p><strong>Name:</strong> <span id="displayName"></span></p>
+            <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+            <p><strong>Mobile Number:</strong> <span id="displayMobile"></span></p>
+            <p><strong>Product:</strong> <span id="displayProduct"></span></p>
+            <p><strong>Description:</strong> <span id="displayDescription"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name'),
+                email: params.get('email'),
+                mobile: params.get('mobile'),
+                product: params.get('product'),
+                description: params.get('description')
+            };
+        }
+
+        // Display the form data
+        window.onload = function() {
+            const queryParams = getQueryParams();
+            document.getElementById('displayName').textContent = queryParams.name;
+            document.getElementById('displayEmail').textContent = queryParams.email;
+            document.getElementById('displayMobile').textContent = queryParams.mobile;
+            document.getElementById('displayProduct').textContent = queryParams.product;
+            document.getElementById('displayDescription').textContent = queryParams.description;
+        }
+    </script>
+    <footer style=>
+        <p>&copy; 2024 Tuwaiq Electronics</p>
+            
+            <a href="https://twitter.com" target="_blank"><img  width="20px" src="images/Social Media/x.png"></a> 
+            
+            <a href="https://instagram.com" target="_blank"><img width="20px" src="images/Social Media/Instagram.png"></a>
+        
+    </footer>
+</body>
+</html>

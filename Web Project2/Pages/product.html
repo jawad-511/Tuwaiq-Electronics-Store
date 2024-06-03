@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tuwaiq Electronics - Product</title>
+    <link rel="icon" href="images/Favicon/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tuwaiq Electronics</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a target="_blank" href="faq.html">FAQ</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="product-details" class="product-details">
+            <h2 id="product-name">Product Name</h2>
+            <div id="product-description" class="product-description">
+                <p>Description:</p>
+            </div>
+            <div id="product-images" class="product-images slider">
+                <div class="slides">
+                    <!-- Images will be loaded dynamically here -->
+                </div>
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div id="product-videos" class="product-videos">
+                <!-- Videos will be loaded dynamically here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.slides img');
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+            slides.forEach((slide, i) => {
+                slide.style.display = (i === currentSlide) ? 'block' : 'none';
+            });
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlide(currentSlide);
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productName = urlParams.get('name');
+
+            document.title = productName + " - Tuwaiq Electronics";
+            const productNameElement = document.getElementById("product-name");
+            productNameElement.textContent = productName;
+
+            switch(productName) {
+                case "Playstation 5":
+                    loadPlaystation5Info();
+                    break;
+                case "Beamz Linked Box":
+                    loadBeamzLinkedBoxInfo();
+                    break;
+                case "LG C1":
+                    loadLGC1Info();
+                    break;
+                default:
+                    break;
+            }
+        });
+
+        function loadPlaystation5Info() {
+            const productDescriptionElement = document.getElementById("product-description");
+            productDescriptionElement.innerHTML = "<center><p>Description: The PS5 console* unleashed new gaming possibilities that you never anticipated, Experience lighting fast loading with an ultra-high speed SSD, with PS5 Console, players get powerful gaming technology packed inside a sleek and compact console design </p></center>";
+
+            const productImagesElement = document.querySelector(".slides");
+            productImagesElement.innerHTML = `
+                <img style="width: 100%;" src="images/PS5/image1.jpg" alt="Playstation 5">
+                <img style=" width: 100%;" src="images/PS5/image2.jpg" alt="Playstation 5">
+                <img style=" width: 100%;" src="images/PS5/image3.jpg" alt="Playstation 5">
+            `;
+
+            const productVideosElement = document.getElementById("product-videos");
+            productVideosElement.innerHTML = `
+                <center><p>Trailer Video:</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/RkC0l4iekYo" frameborder="0" allowfullscreen></iframe>
+                </center>
+            `;
+        }
+
+        function loadBeamzLinkedBoxInfo() {
+            const productDescriptionElement = document.getElementById("product-description");
+            productDescriptionElement.innerHTML = "<center><p>Description: Add entertainment beyond the screen. It synchronizes with the colors displayed on the screen and transmits them to the controllable backlight strip installed behind it. Enjoy an ultra-immersive 4D effect as the vivid backlight illuminates your space with the colors of your favorite series, movies and video games.</p></center>";
+
+            const productImagesElement = document.querySelector(".slides");
+            productImagesElement.innerHTML = `
+                <img style= width: 100%;" src="images/Beamzlinkedbox/image1.webp" alt="Beamzlinkedbox">
+                <img style=" width: 100%;" src="images/Beamzlinkedbox/image2.webp" alt="Beamzlinkedbox">
+                <img style=" width: 100%;" src="images/Beamzlinkedbox/image3.webp" alt="Beamzlinkedbox">
+            `;
+
+            const productVideosElement = document.getElementById("product-videos");
+            productVideosElement.innerHTML = `
+                <center><p>Videos:</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/c6uLG4kGHQY" frameborder="0" allowfullscreen></iframe>
+                </center>
+            `;
+        }
+
+        function loadLGC1Info() {
+            const productDescriptionElement = document.getElementById("product-description");
+            productDescriptionElement.innerHTML = "<center><p>Description: LG OLED TV 55 Inch C1 Series Cinema Screen Design 4K Cinema HDR webOS Smart with ThinQ AI Pixel Dimming</p></center>";
+
+            const productImagesElement = document.querySelector(".slides");
+            productImagesElement.innerHTML = `
+                <img style=" width: 100%;" src="images/LGC1/image1.jpeg" alt="LGC1">
+                <img style=" width: 100%;" src="images/LGC1/image2.jpg" alt="LGC1">
+                <img style=" width: 100%;" src="images/LGC1/image3.jpg" alt="LGC1">
+            `;
+
+            const productVideosElement = document.getElementById("product-videos");
+            productVideosElement.innerHTML = `
+                <center><p>Videos:</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/kwuSmklZFzM" frameborder="0" allowfullscreen></iframe>
+                </center>
+            `;
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Tuwaiq Electronics</p>
+        <a href="https://twitter.com" target="_blank"><img width="20px" src="images/Social Media/x.png"></a> 
+        <a href="https://instagram.com" target="_blank"><img width="20px" src="images/Social Media/Instagram.png"></a>
+    </footer>
+</body>
+</html>
